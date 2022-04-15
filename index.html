@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A simple PacMan inspired project in JavaScript"
+    />
+    <meta name="author" content="Katherine Parsons" />
+    <title>Simple PacMan</title>
+    <!-- Bootstrap CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <!-- Web Font Loader -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Redressed&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Portfolio Theme -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://kParsonsDesign.github.io/css/style.css"
+    />
+    <!-- PacMan Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+  </head>
+  <body>
+    <header>
+      <!-- Dropdown Nav Content -->
+      <div class="collapse bg-dark" id="navbarHeader">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-8 col-md-7 py-4">
+              <h4 class="text-white">About Me</h4>
+              <img
+                class="rounded-circle float-start avatar me-2"
+                src="https://kParsonsDesign.github.io/assets/images/KParsons_self_DC_2017.jpg"
+                alt="Katherine Parsons profile photo"
+              />
+              <p class="text-muted">
+                I'm a partner in a small publishing company. This portfolio is
+                to showcase some of my web development work. I hope you enjoy
+                some of the projects I've worked on.
+              </p>
+            </div>
+            <div class="col-sm-4 offset-md-1 py-4">
+              <h4 class="text-white">Contact</h4>
+              <ul class="list-unstyled">
+                <li>
+                  <a
+                    href="https://www.linkedin.com/in/kparsons-design"
+                    class="text-white"
+                    >LinkedIn</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Nav Bar -->
+      <div class="navbar navbar-dark bg-dark shadow-sm">
+        <div class="container">
+          <a
+            href="https://kParsonsDesign.github.io/"
+            class="navbar-brand d-flex align-items-center"
+          >
+            <strong>kParsons Design</strong>
+          </a>
+          <a
+            href="https://kParsonsDesign.github.io/projects.html"
+            class="navbar-nav text-white d-flex"
+            >Projects</a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarHeader"
+            aria-controls="navbarHeader"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="top-info text-center container">
+        <div class="row py-lg-5">
+          <div class="col-lg-8 col-md-12 mx-auto">
+            <h1 class="fw-light">PacMan Exercise</h1>
+            <!-- Top Run Info and Run Buttons -->
+            <div class="top-info">
+              <!-- <p class="lead text-muted">
+                <strong>Start / Stop:</strong> Press the space bar, or click
+                PacMan or the Start/Stop button<br />
+                <strong>Change Direction:</strong> Use the arrow keys
+              </p> -->
+              <p class=" buttons">
+                <span class="my-auto grid-container">
+                  <a class="btn btn-primary my-1" id="addPacman">Add a PacMan</a>
+                  <a class="btn btn-success my-1" id="runButton">Start all PacMen</a>
+                  <a class="btn btn-secondary my-1" id="clearButton">Clear Game</a>
+                </span>
+                <!-- Remove arrows until directional interaction added to js -->
+                <!-- 
+                <span class="arrow-container">
+                  <a
+                    id="upArrow"
+                    class="btn btn-secondary item1"
+                    onclick="changeDirection('up')"
+                    >&#11165;</a
+                  >
+                  <a
+                    id="leftArrow"
+                    class="btn btn-secondary item2"
+                    onclick="changeDirection('left')"
+                    >&#11164;</a
+                  >
+                  <a
+                    id="rightArrow"
+                    class="btn btn-secondary item3"
+                    onclick="changeDirection('right')"
+                    >&#11166;</a
+                  >
+                  <a
+                    id="downArrow"
+                    class="btn btn-secondary item4"
+                    onclick="changeDirection('down')"
+                    >&#11167;</a
+                  >
+                </span>
+                 -->
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- <p>Use the arrows to change his direction.</p> -->
+      <!-- <p><button id="pacButton">Start PacMan</button></p> -->
+      <!-- <div id="container" style="display: flex; padding: 5px;"> -->
+      <div id="container" class="col-xl-8 col-lg-9 col-md-10 col-11 mx-auto">
+        <div
+          id="pacBoundary"
+          style="
+            display: block;
+            width: 100%;
+            height: 500px;
+            border: solid 2px #51585e;
+            border-radius: 5px;
+            position: relative;
+          "
+        >
+          <!-- inline CSS needed to affect movement? -->
+          <!-- <img
+            id="PacMan"
+            src="./images/PacMan-open.svg"
+            width="100"
+            height="100"
+            style="position: absolute"
+            alt="Pac Man"
+          /> -->
+          <!--<div class="resizer topLeft"></div>
+          <div class="resizer topRight"></div>
+          <div class="resizer bottomLeft"></div>
+          <div class="resizer bottomRight"></div>-->
+        </div>
+      </div>
+    </main>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./pacmen.js"></script>
+    <!-- <script src="./js/dots.js"></script> -->
+  </body>
+</html>
