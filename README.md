@@ -14,28 +14,31 @@ The original goal of this project was to create many pacmen using a JavaScript "
 - Have all Pacmen start moving in random directions and speeds
 - All Pacmen bounce off boundary edges and keep moving
 
-<!-- From PacMan Repo Description -->
-<!-- Update the following -->
-<!-- ### Refactoring:
-I am attempting to make this more like a PacMan game.
-- Created my own svg image file(s) in Adobe Illustrator
-- Use CSS properties to rotate and reverse the images as needed
-  - This allows me to use only 2 images ("open" and "closed") for movement in all 4 directions
-  - The original project used 4 separate png images to move PacMan in a horizontal direction only (moving right open and closed mouth, and moving left open and closed mouth).
-- Start / Stop movement by space bar and button click
-- Change direction by keyboard arrows and on-screen arrows
-- Added vertical movement and boundary detection
-- Added a Boundary box so PacMan stays inside the box and does not move to the edges of the screen
-- Boundary edge redetection on window resize -->
+### Refactoring:
+- Created my own pacman svg images (1 open mouth and 1 closed mouth)
+- Using JavaScript to switch the image src for open and closed mouth
+- Using css translate to rotate and flip images according to direction
+- Interval of movement is set to 200ms to get the "chomp" effect
+- Directions are chosen by a random integer generator that chooses between left, none, and right for the x direction movement and up, none, and down for the y direction movement. The 2 are then combined.
+- If both random choices result in no movement in either direction (no movement at all) then I have another "coin-toss" random number generator to assign a direction of movement
+- I chose not to have the Pacmen move at different speeds. To see a project with fully random direction of movement and speeds please see my [Bouncing Balls Project](https://github.com/kParsonsDesign/bouncingBalls)
+
+
 
 ## To Run
 This project can be viewed live at [kParsonsDesign.github.io/many-pacmen/](https://kParsonsDesign.github.io/many-pacmen/).
 
+
+
 ## Roadmap
 - May have the Pacmen eat each other (either based on relative size, direction of movement, or z-index)
 
+
+
 ## Disclaimer
 This is a personal project based on a copyrighted or trademarked work. It is intended for educational and entertainment purposes only. I make no profit from this project and it is not available for resale by any other entity.
+
+
 
 ## License
 [Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)](https://github.com/kParsonsDesign/many-pacmen/blob/main/LICENSE)
